@@ -199,11 +199,11 @@
         )
       )
     )
-    (symbol "Connector:Conn_01x01_Socket" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+    (symbol "Connector:Conn_01x02_Socket" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "J" (at 0 2.54 0)
         (effects (font (size 1.27 1.27)))
       )
-      (property "Value" "Conn_01x01_Socket" (at 0 -2.54 0)
+      (property "Value" "Conn_01x02_Socket" (at 0 -5.08 0)
         (effects (font (size 1.27 1.27)))
       )
       (property "Footprint" "" (at 0 0 0)
@@ -218,13 +218,25 @@
       (property "ki_keywords" "connector" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_description" "Generic connector, single row, 01x01, script generated" (at 0 0 0)
+      (property "ki_description" "Generic connector, single row, 01x02, script generated" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "Conn_01x01_Socket_1_1"
+      (symbol "Conn_01x02_Socket_1_1"
+        (arc (start 0 -2.032) (mid -0.5058 -2.54) (end 0 -3.048)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.27 -2.54)
+            (xy -0.508 -2.54)
+          )
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
         (polyline
           (pts
             (xy -1.27 0)
@@ -240,6 +252,10 @@
         (pin passive line (at -5.08 0 0) (length 3.81)
           (name "Pin_1" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -2.54 0) (length 3.81)
+          (name "Pin_2" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
         )
       )
     )
@@ -1127,6 +1143,10 @@
     (stroke (width 0) (type default))
     (uuid 5c2685e2-df01-49a0-82a1-dd66979ae4a2)
   )
+  (wire (pts (xy 198.12 48.26) (xy 195.58 48.26))
+    (stroke (width 0) (type default))
+    (uuid 5f59fd24-2b25-45ed-97df-31efc892fdab)
+  )
   (wire (pts (xy 24.13 90.17) (xy 24.13 97.79))
     (stroke (width 0) (type default))
     (uuid 60f96cd2-e129-4cb7-8438-a8977469ce47)
@@ -1146,6 +1166,10 @@
   (wire (pts (xy 106.68 95.25) (xy 106.68 101.6))
     (stroke (width 0) (type default))
     (uuid 73f36550-d50c-4a73-88a4-ca29af1f1cb7)
+  )
+  (wire (pts (xy 195.58 48.26) (xy 195.58 57.15))
+    (stroke (width 0) (type default))
+    (uuid 7400109c-4b45-4504-a091-4c68861ab61d)
   )
   (wire (pts (xy 73.66 97.79) (xy 81.28 97.79))
     (stroke (width 0) (type default))
@@ -1892,6 +1916,32 @@
     )
   )
 
+  (symbol (lib_id "Connector:Conn_01x02_Socket") (at 203.2 45.72 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 3336f332-c5a5-45eb-8d72-33a650095d86)
+    (property "Reference" "J1" (at 204.47 45.72 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "Conn_01x02_Socket" (at 204.47 48.26 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" (at 203.2 45.72 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 203.2 45.72 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 933d6bd4-b0f2-4b0b-b924-6bc0800f4a66))
+    (pin "2" (uuid 45bd993e-4755-4f81-a932-9326792ac22d))
+    (instances
+      (project "current_sensor"
+        (path "/3057602e-8e13-4051-a806-ac2e4021c12f"
+          (reference "J1") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "power:+12V") (at 113.03 35.56 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 343389d5-c1af-484a-9b5c-d4945b7fa796)
@@ -2000,6 +2050,41 @@
       (project "Control_board"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
           (reference "U8") (unit 2)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 195.58 57.15 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 496bc359-e2a9-4b6d-9424-00f71ad43820)
+    (property "Reference" "#PWR020" (at 195.58 63.5 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 195.58 61.5934 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 195.58 57.15 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 195.58 57.15 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 646ec536-4783-4571-87aa-c2b3844ee950))
+    (instances
+      (project "current_sensor"
+        (path "/3057602e-8e13-4051-a806-ac2e4021c12f"
+          (reference "#PWR020") (unit 1)
+        )
+      )
+      (project "current_sensor"
+        (path "/74ccd974-f582-4f7c-bca6-79b406a1e7da"
+          (reference "#PWR019") (unit 1)
+        )
+      )
+      (project "Control_board"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR02") (unit 1)
         )
       )
     )
@@ -2593,36 +2678,6 @@
       (project "Control_board"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
           (reference "U8") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Connector:Conn_01x01_Socket") (at 203.2 45.72 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid a7ea8dfd-6c70-4d98-8687-8ebd6bd45ace)
-    (property "Reference" "ADC_Current_Reading1" (at 204.47 44.45 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "Conn_01x01_Socket" (at 204.47 46.99 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" (at 203.2 45.72 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 203.2 45.72 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 71320fe7-0f87-49c0-8325-f28c9e135d2a))
-    (instances
-      (project "current_sensor"
-        (path "/3057602e-8e13-4051-a806-ac2e4021c12f"
-          (reference "ADC_Current_Reading1") (unit 1)
-        )
-      )
-      (project "current_sensor"
-        (path "/74ccd974-f582-4f7c-bca6-79b406a1e7da"
-          (reference "ADC_Current_Reading1") (unit 1)
         )
       )
     )
